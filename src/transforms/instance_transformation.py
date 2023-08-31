@@ -1,4 +1,4 @@
-from best_practice_etl.transforms.resource_transformation import ResourceTransformation
+from src.transforms.resource_transformation import ResourceTransformation
 from pyspark.sql import DataFrame
 
 

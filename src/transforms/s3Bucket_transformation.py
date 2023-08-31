@@ -1,4 +1,4 @@
-from best_practice_etl.transforms.resource_transformation import ResourceTransformation
+from src.transforms.resource_transformation import ResourceTransformation
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
 
@@ -17,6 +17,7 @@ class S3BucketTransformation(ResourceTransformation):
         return "aws-s3"
 
     def apply_custom_cols(self, df: DataFrame) -> DataFrame:
+
         return df.withColumn("json_detail",
                              F.when(F.col("json_detail.name").like("%log%"),
                                     F.struct(

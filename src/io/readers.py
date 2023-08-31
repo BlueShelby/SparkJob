@@ -11,4 +11,10 @@ class S3Reader:
 
     def read_parquet(self, spark: SparkSession) -> DataFrame:
         path = f"s3://{self.bucket}/{self.path}"
-        return spark.read.parquet(path)
+
+        try:
+            return spark.read.parquet("test/input")
+        except Exception as e:
+            print(f"An error occurred trying to read PARQUET result: {e}")
+            raise e
+

@@ -3,11 +3,16 @@ name = "best-practice-etl"
 version = "0.1.0"
 description = ""
 authors = ["jochoa <jochoa@users.noreply.github.com>"]
-packages = [{include = "best_practice_etl"}]
+packages = [
+    {include = "src"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 pyspark = "^3.4.0"
+requests = "^2.31.0"
+pandas = "^2.0.3"
+s3fs = "^2023.6.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.2"

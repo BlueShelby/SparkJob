@@ -1,8 +1,13 @@
 import argparse
 
-from best_practice_etl.io.readers import S3Reader
-from best_practice_etl.io.writers import S3Writer
-from best_practice_etl.jobs.process import ProcessJob
+from src.io.readers import S3Reader
+from src.io.writers import S3Writer
+from src.jobs.process import ProcessJob
+
+
+# Set spark environments
+# os.environ['PYSPARK_PYTHON'] = '/usr/bin/python3'
+# os.environ['PYSPARK_DRIVER_PYTHON'] = '/usr/bin/python3'
 
 
 def main():

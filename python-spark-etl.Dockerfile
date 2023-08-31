@@ -7,7 +7,6 @@ FROM apache/spark-py:v3.4.0 as base
 
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYSPARK_MAJOR_PYTHON_VERSION=3
 
 ############################################
 # Build image

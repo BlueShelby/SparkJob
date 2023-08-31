@@ -1,8 +1,8 @@
 from typing import Dict, Type
 
-from best_practice_etl.transforms.instance_transformation import InstanceTransformation
-from best_practice_etl.transforms.resource_transformation import ResourceTransformation
-from best_practice_etl.transforms.s3Bucket_transformation import S3BucketTransformation
+from src.transforms.instance_transformation import InstanceTransformation
+from src.transforms.resource_transformation import ResourceTransformation
+from src.transforms.s3Bucket_transformation import S3BucketTransformation
 from pyspark.sql import SparkSession
 
 

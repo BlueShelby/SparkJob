@@ -1,10 +1,10 @@
-from best_practice_etl.io.readers import S3Reader
-from best_practice_etl.io.writers import S3Writer
-from best_practice_etl.jobs.constants import RESOURCE_TYPES
+from src.io.readers import S3Reader
+from src.io.writers import S3Writer
+from src.jobs.constants import RESOURCE_TYPES
 from pyspark.sql.types import StructType
 
-from best_practice_etl.transforms.transformation_factory import TransformationFactory
-from best_practice_etl.jobs.base_spark_job import BaseSparkJob
+from src.transforms.transformation_factory import TransformationFactory
+from src.jobs.base_spark_job import BaseSparkJob
 from pyspark.sql import functions as F
 
 
@@ -33,5 +33,8 @@ class ProcessJob(BaseSparkJob):
                     result = result.join(transformed_df, "key_index", "right")
 
         result = result.drop("key_index")
+        result.show(truncate=True)
 
         self.writer.write_json(result)
+
+
